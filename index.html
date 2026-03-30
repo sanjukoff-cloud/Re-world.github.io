@@ -505,6 +505,7 @@
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
             position: relative;
             backdrop-filter: blur(3px);
+            cursor: pointer;
         }
 
         .gallery-item::before {
@@ -542,6 +543,92 @@
             color: var(--text-muted);
             text-align: center;
             padding: 20px;
+        }
+
+        /* ============= LIGHTBOX ============= */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border: 3px solid var(--couleur-principale);
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 255, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: var(--couleur-principale);
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--couleur-principale);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #000;
+            background: var(--couleur-principale);
+            transform: scale(1.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            font-size: 30px;
+            color: var(--couleur-principale);
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--couleur-principale);
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            color: #000;
+            background: var(--couleur-principale);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         footer {
@@ -616,6 +703,16 @@
             main {
                 padding: 20px 15px;
             }
+
+            .lightbox-close {
+                font-size: 30px;
+                padding: 8px 15px;
+            }
+
+            .lightbox-nav {
+                font-size: 24px;
+                padding: 8px 12px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -666,6 +763,22 @@
             .logo-hero img {
                 height: 80px;
                 max-width: 100px;
+            }
+
+            .lightbox-image {
+                max-height: 70vh;
+            }
+
+            .lightbox-close {
+                font-size: 24px;
+                padding: 6px 12px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .lightbox-nav {
+                font-size: 20px;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -854,17 +967,17 @@
         <section id="galerie" class="section">
             <div class="container">
                 <h2>Galerie</h2>
-                <p>Transmission Visuelle : Jetez un œil aux clichés d'archives de notre base arrière avant de franchir le sas.</p>
+                <p>Transmission Visuelle : Jetez un œil aux clichés d'archives de notre base arrière avant de franchir le sas. Cliquez sur une image pour l'agrandir!</p>
             </div>
 
             <div class="gallery">
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox(0)">
                     <img src="https://i.ibb.co/B5HcbzDL/Chat-GPT-Image-20-oct-2025-14-27-53.png" alt="Image 1">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox(1)">
                     <img src="https://i.ibb.co/nMNTBvWt/Capture-d-cran-2026-03-30-202313.png" alt="Image 2">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox(2)">
                     <img src="https://i.ibb.co/d4tpKbqB/Capture-d-cran-2026-03-30-202342.png" alt="Image 3">
                 </div>
                 <div class="gallery-item">
@@ -881,6 +994,16 @@
 
     </main>
 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <span class="lightbox-nav lightbox-prev" onclick="prevImage()">&#10094;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <span class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</span>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <p><strong>Re-World RP</strong> © 2026 - Un univers post-apocalyptique</p>
@@ -889,6 +1012,54 @@
     </footer>
 
     <script>
+        let currentImageIndex = 0;
+        const images = [
+            'https://i.ibb.co/B5HcbzDL/Chat-GPT-Image-20-oct-2025-14-27-53.png',
+            'https://i.ibb.co/nMNTBvWt/Capture-d-cran-2026-03-30-202313.png',
+            'https://i.ibb.co/d4tpKbqB/Capture-d-cran-2026-03-30-202342.png'
+        ];
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = images[index];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('lightbox-image').src = images[currentImageIndex];
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('lightbox-image').src = images[currentImageIndex];
+        }
+
+        // Fermer la lightbox avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Navigation au clavier
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            }
+        });
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
