@@ -7,34 +7,32 @@
     <style>
         /* ============= VARIABLES GLOBALES ============= */
         :root {
-            --couleur-principale: #00ff00;      /* Vert radioactif */
-            --couleur-accent: #00cc00;          /* Vert plus foncé */
-            --bg-dark: #0a0a0a;                 /* Noir très foncé */
-            --bg-card: #1a1a1a;                 /* Gris très foncé */
-            --text-main: #ffffff;               /* Blanc */
-            --text-muted: #888888;              /* Gris clair */
-            --border: #00ff00;                  /* Vert radioactif pour les bordures */
+            --couleur-principale: #00ff00;
+            --couleur-accent: #00cc00;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border: #00ff00;
         }
 
-        /* ============= RESET & BASE ============= */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-    body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    background: url('https://i.ibb.co/Hf3VZ5xT/Gemini-Generated-Image-og7zc0og7zc0og7z.png') no-repeat fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    color: var(--text-main);
-    line-height: 1.6;
-    padding-top: 100px;
-    min-height: 100vh;
-}
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: url('https://i.ibb.co/Hf3VZ5xT/Gemini-Generated-Image-og7zc0og7zc0og7z.png') no-repeat fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: 100px;
+            min-height: 100vh;
+        }
 
-        /* ============= NAVIGATION ============= */
         nav {
             position: fixed;
             top: 0;
@@ -120,7 +118,6 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
-        /* ============= CONTENU PRINCIPAL ============= */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -149,7 +146,6 @@
             }
         }
 
-        /* ============= TYPO & TEXTE ============= */
         h1 {
             font-size: 3rem;
             color: var(--couleur-principale);
@@ -193,7 +189,6 @@
             text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
 
-        /* ============= CONTENEURS ============= */
         .container {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.98) 0%, rgba(17, 17, 17, 0.98) 100%);
             border: 2px solid var(--couleur-principale);
@@ -306,7 +301,6 @@
             transform: scale(1.1);
         }
 
-        /* ============= GRILLE & LISTES ============= */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -372,7 +366,6 @@
             font-weight: bold;
         }
 
-        /* Style pour les listes du Lore */
         .lore-list {
             list-style: none;
             margin-left: 20px;
@@ -390,7 +383,6 @@
             margin-right: 5px;
         }
 
-        /* Style pour les listes de sanctions */
         .sanction-list {
             list-style: none;
             margin-left: 20px;
@@ -409,19 +401,16 @@
             margin-right: 8px;
         }
 
-        /* Highlight rouge pour "interdit" */
         .interdit {
             color: #ff4444;
             font-weight: bold;
         }
 
-        /* Highlight vert pour "autorisé" */
         .autorise {
             color: var(--couleur-principale);
             font-weight: bold;
         }
 
-        /* Box de mise en garde */
         .warning-box {
             background: linear-gradient(135deg, rgba(255, 68, 68, 0.1) 0%, rgba(255, 68, 68, 0.05) 100%);
             border: 2px solid #ff4444;
@@ -436,7 +425,6 @@
             color: var(--text-main);
         }
 
-        /* ============= BOUTONS ============= */
         .btn {
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             border: 2px solid var(--couleur-principale);
@@ -480,7 +468,6 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
-        /* ============= FORMULAIRES ============= */
         input, textarea {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(17, 17, 17, 0.95) 100%);
             border: 2px solid var(--couleur-principale);
@@ -501,7 +488,6 @@
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.4), inset 0 0 10px rgba(0, 255, 0, 0.05);
         }
 
-        /* ============= GALERIE ============= */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -558,7 +544,6 @@
             padding: 20px;
         }
 
-        /* ============= FOOTER ============= */
         footer {
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.95) 100%);
             border-top: 3px solid var(--couleur-principale);
@@ -586,7 +571,6 @@
             color: var(--text-muted);
         }
 
-        /* ============= RESPONSIVE ============= */
         @media (max-width: 768px) {
             nav {
                 gap: 8px;
@@ -688,7 +672,7 @@
 </head>
 <body>
 
-    <!-- ============= NAVIGATION ============= -->
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">
             <img src="https://i.ibb.co/R42xJT5K/logoreworld-jpg.png" alt="Re-World RP Logo">
@@ -702,10 +686,10 @@
         <button class="nav-btn" id="btn-galerie" onclick="showSection('galerie')">Galerie</button>
     </nav>
 
-    <!-- ============= CONTENU ============= -->
+    <!-- CONTENU -->
     <main>
 
-        <!-- ===== ACCUEIL ===== -->
+        <!-- ACCUEIL -->
         <section id="accueil" class="section active">
             <div class="container-hero">
                 <div class="logo-hero">
@@ -738,7 +722,7 @@
             </div>
         </section>
 
-        <!-- ===== LORE ===== -->
+        <!-- LORE -->
         <section id="lore" class="section">
             <div class="container">
                 <h1>L'Apparition de l'Infection</h1>
@@ -746,7 +730,6 @@
                 <p style="color: var(--text-muted); font-style: italic;">(aussi appelé : "la Résonance", "le Souffle", "la Vague")</p>
             </div>
 
-            <!-- AVANT LA CHUTE -->
             <div class="container">
                 <h2>🌍 Avant la Chute (Années -10 à -1)</h2>
                 <p>Le monde n'était pas en paix, mais il fonctionnait.</p>
@@ -760,19 +743,8 @@
                 </ul>
 
                 <p>plusieurs consortiums privés et gouvernements ont lancé des programmes de <strong>réhabilitation environnementale accélérée</strong>.</p>
-                
-                <h3>L'objectif :</h3>
-                <p>👉 Réensemencer la planète avec des organismes capables de :</p>
-                <ul class="lore-list">
-                    <li>dépolluer l'air et l'eau</li>
-                    <li>recycler les déchets industriels</li>
-                    <li>accélérer la régénération des sols</li>
-                </ul>
-
-                <p>Ces projets étaient ouverts, fragmentés, sous-traités. <strong>Aucun acteur n'avait la vision complète.</strong></p>
             </div>
 
-            <!-- LE DÉCLENCHEUR -->
             <div class="container">
                 <h2>🧬 Le Déclencheur (Année 0)</h2>
                 <p>Un programme commun finit par émerger : <strong>ECHO-7</strong>.</p>
@@ -785,136 +757,10 @@
                     <li>levures</li>
                     <li>agents fongiques</li>
                 </ul>
-
-                <h3>Son rôle :</h3>
-                <ul class="lore-list">
-                    <li>survivre dans des environnements extrêmes</li>
-                    <li>s'adapter rapidement</li>
-                    <li>se synchroniser avec les conditions locales</li>
-                </ul>
-
-                <h3>ECHO-7 est disséminé :</h3>
-                <ul class="lore-list">
-                    <li>dans l'air (ensemencement atmosphérique)</li>
-                    <li>dans l'eau (stations de traitement)</li>
-                    <li>dans les sols (zones agricoles tests)</li>
-                </ul>
-
-                <p style="color: var(--couleur-principale); font-weight: bold; margin-top: 20px;">Tout fonctionne… pendant quelques mois.</p>
-            </div>
-
-            <!-- LA BASCULE -->
-            <div class="container">
-                <h2>⚠️ La Bascule</h2>
-                <p>Un phénomène imprévu apparaît.</p>
-                
-                <h3>ECHO-7 développe une capacité inattendue :</h3>
-                <p>Il interprète la présence humaine comme un <strong>facteur de déséquilibre</strong>.</p>
-
-                <h3>Plus précisément :</h3>
-                <p>Il réagit aux <strong>marqueurs physiologiques humains</strong> :</p>
-                <ul class="lore-list">
-                    <li>chaleur corporelle</li>
-                    <li>stress</li>
-                    <li>adrénaline</li>
-                    <li>pollution sonore</li>
-                    <li>émissions chimiques</li>
-                </ul>
-
-                <p style="margin-top: 20px;">Dans la majorité des espèces, ECHO-7 s'adapte. <strong>Chez certains humains, il ne s'intègre pas.</strong></p>
-            </div>
-
-            <!-- L'INFECTION -->
-            <div class="container">
-                <h2>🧟‍♂️ L'Infection</h2>
-                <p>Chez une minorité de la population, ECHO-7 provoque :</p>
-                <ul class="lore-list">
-                    <li>une désynchronisation neurologique</li>
-                    <li>une hyperactivité motrice</li>
-                    <li>une perte progressive des fonctions cognitives supérieures</li>
-                    <li>une réactivité extrême aux stimuli environnementaux</li>
-                </ul>
-
-                <p style="margin-top: 20px;">Le corps n'est pas mort. Le cerveau n'est pas détruit.</p>
-                <p style="color: var(--couleur-principale); font-weight: bold; font-size: 1.1rem;">👉 L'humain devient un vecteur actif de l'écosystème.</p>
-
-                <h3>Ces individus sont appelés plus tard :</h3>
-                <ul class="lore-list">
-                    <li>Infectés</li>
-                    <li>Résonants</li>
-                    <li>Gardiens (dans certaines communautés)</li>
-                </ul>
-            </div>
-
-            <!-- LES BIOMES -->
-            <div class="container">
-                <h2>🌿 Pourquoi les Biomes sont Différents</h2>
-                <p>ECHO-7 n'agit jamais de la même manière deux fois.</p>
-                <p>Il se calibre selon :</p>
-                <ul class="lore-list">
-                    <li>humidité</li>
-                    <li>température</li>
-                    <li>pression atmosphérique</li>
-                    <li>pollution</li>
-                    <li>activité humaine résiduelle</li>
-                </ul>
-
-                <h3>Résultat :</h3>
-                <ul class="lore-list">
-                    <li><strong>Zones humides</strong> → infectés sensibles à la chaleur</li>
-                    <li><strong>Zones cendrées</strong> → infectés attirés par le bruit</li>
-                    <li><strong>Zones froides</strong> → infectés lents mais résistants</li>
-                    <li><strong>Zones forestières</strong> → comportements prédateurs</li>
-                    <li><strong>Zones "rouges"</strong> → réactions agressives et instables</li>
-                </ul>
-
-                <p style="margin-top: 20px; color: var(--couleur-principale); font-weight: bold;">👉 Les biomes ne sont pas des décors : ce sont des états du système ECHO-7.</p>
-            </div>
-
-            <!-- L'EFFONDREMENT -->
-            <div class="container">
-                <h2>🏙️ L'Effondrement des Sociétés (Année 0 → +1)</h2>
-                <p>Les États ne tombent pas par la guerre.</p>
-                <p>Ils tombent parce que :</p>
-                <ul class="lore-list">
-                    <li>l'infection est invisible au début</li>
-                    <li>elle ne se transmet pas toujours par morsure</li>
-                    <li>les symptômes sont tardifs et irréguliers</li>
-                    <li>certaines zones restent longtemps "saines"</li>
-                </ul>
-
-                <h3>Les décisions sont contradictoires :</h3>
-                <ul class="lore-list">
-                    <li>confinement local → migrations massives</li>
-                    <li>désinfection → activation d'ECHO-7</li>
-                    <li>silence médiatique → panique</li>
-                </ul>
-
-                <p style="margin-top: 20px;">Les chaînes logistiques lâchent. Les villes se vident. La nature avance.</p>
-            </div>
-
-            <!-- CE QU'ILS SAVENT -->
-            <div class="container">
-                <h2>🧪 Ce que les Survivants Savent (Et Ignorent)</h2>
-
-                <h3>Ce qu'ils savent :</h3>
-                <ul class="lore-list">
-                    <li>l'infection est liée à l'environnement</li>
-                    <li>certains équipements protègent</li>
-                    <li>le bruit, le stress, la chaleur attirent les infectés</li>
-                    <li>certaines zones sont "plus vivantes que d'autres"</li>
-                </ul>
-
-                <h3>Ce qu'ils ignorent :</h3>
-                <ul class="lore-list">
-                    <li>s'il existe un remède stable</li>
-                    <li>si ECHO-7 peut être neutralisé</li>
-                    <li>si l'humanité est censée survivre</li>
-                </ul>
             </div>
         </section>
 
-        <!-- ===== RÈGLEMENT ===== -->
+        <!-- RÈGLEMENT -->
         <section id="reglement" class="section">
             <div class="container">
                 <h1>RÈGLEMENT OFFICIEL</h1>
@@ -926,7 +772,6 @@
                 ⚠️ <strong>Attention :</strong> Le non-respect de ces règles peut entraîner des sanctions progressives, allant de l'avertissement au bannissement définitif.
             </div>
 
-            <!-- Section 1 -->
             <div class="container">
                 <h2>🧭 1. Principes Fondamentaux</h2>
 
@@ -938,225 +783,10 @@
                     <li>crédible humainement</li>
                     <li>jouée sérieusement</li>
                 </ul>
-
-                <div class="warning-box">
-                    <p><span class="interdit">❌ Le fun personnel ne doit jamais se faire au détriment de l'immersion des autres.</span></p>
-                </div>
-
-                <h3>1.2 — Fair-Play & Respect</h3>
-                <ul class="lore-list">
-                    <li>Respect entre joueurs HRP et RP</li>
-                    <li>Aucun propos haineux, discriminatoire ou harcelant</li>
-                    <li>Le staff n'est pas un ennemi, ses décisions sont à respecter</li>
-                </ul>
-            </div>
-
-            <!-- Section 2 -->
-            <div class="container">
-                <h2>🎭 2. Règles RolePlay Générales</h2>
-
-                <h3>2.1 — Powergaming <span class="interdit">❌</span></h3>
-                <p><strong>Interdit de :</strong></p>
-                <ul class="lore-list">
-                    <li>réaliser des actions irréalistes</li>
-                    <li>ignorer blessures, fatigue, environnement</li>
-                    <li>forcer le RP d'un autre joueur</li>
-                </ul>
-
-                <h3>📌 Exemples :</h3>
-                <ul class="lore-list">
-                    <li>courir après plusieurs blessures graves</li>
-                    <li>encaisser des attaques sans réaction RP</li>
-                    <li>escalader / survivre à des situations impossibles</li>
-                </ul>
-
-                <h3>2.2 — Metagaming <span class="interdit">❌</span></h3>
-                <p><strong>Il est interdit d'utiliser des informations :</strong></p>
-                <ul class="lore-list">
-                    <li>Discord</li>
-                    <li>streams</li>
-                    <li>HRP</li>
-                    <li>connaissances joueurs</li>
-                </ul>
-                <p>➡️ <strong>en RP.</strong></p>
-
-                <h3>2.3 — Fear RP OBLIGATOIRE</h3>
-                <p><strong>Votre personnage tient à sa vie.</strong></p>
-                <p>Dans Re-World RP :</p>
-                <ul class="lore-list">
-                    <li>les armes sont rares</li>
-                    <li>la mort a des conséquences</li>
-                    <li>l'environnement est dangereux</li>
-                </ul>
-                <div class="warning-box">
-                    <p><span class="interdit">❌ Jouer un personnage suicidaire ou invincible est interdit.</span></p>
-                </div>
-
-                <h3>2.4 — No Troll RP</h3>
-                <p><strong>Sont interdits :</strong></p>
-                <ul class="lore-list">
-                    <li>comportements clownesques</li>
-                    <li>RP volontairement absurde</li>
-                    <li>sabotage RP intentionnel</li>
-                    <li>provocation HRP déguisée en RP</li>
-                </ul>
-                <p style="margin-top: 15px; color: var(--couleur-principale); font-weight: bold;">📌 Le serveur n'est ni GTA Online, ni un sandbox humoristique.</p>
-            </div>
-
-            <!-- Section 3 -->
-            <div class="container">
-                <h2>☠️ 3. Mort, Blessures & Combat</h2>
-
-                <h3>3.1 — New Life Rule (NLR)</h3>
-                <p><strong>En cas de mort RP :</strong></p>
-                <ul class="lore-list">
-                    <li>oubli des événements immédiats</li>
-                    <li>interdiction de retour immédiat sur zone</li>
-                    <li>respect des décisions staff si mort définitive</li>
-                </ul>
-
-                <h3>3.2 — Combat RP</h3>
-                <ul class="lore-list">
-                    <li>Toujours privilégier le RP avant la violence</li>
-                    <li><span class="interdit">Le KOS (Kill On Sight) est strictement interdit</span></li>
-                    <li>Toute action violente doit avoir un contexte RP clair</li>
-                </ul>
-
-                <h3>3.3 — Infections & environnement</h3>
-                <ul class="lore-list">
-                    <li>Les biomes, la météo et les infectés doivent être joués</li>
-                    <li>Ignorer volontairement les effets environnementaux = powergaming</li>
-                </ul>
-            </div>
-
-            <!-- Section 4 -->
-            <div class="container">
-                <h2>🧠 4. Personnage & Immersion</h2>
-
-                <h3>4.1 — Personnage crédible</h3>
-                <p><strong>Interdits :</strong></p>
-                <ul class="lore-list">
-                    <li>personnages surhumains</li>
-                    <li>ex-forces spéciales ultra-compétents sans justification</li>
-                    <li>personnages caricaturaux</li>
-                </ul>
-                <p style="margin-top: 15px;">📌 <strong>Le staff se réserve le droit de refuser ou demander modification d'un background.</strong></p>
-
-                <h3>4.2 — Nom & Identité</h3>
-                <ul class="lore-list">
-                    <li>Nom RP réaliste</li>
-                    <li>Pas de référence troll, meme, pop culture absurde</li>
-                    <li>Identité cohérente avec l'univers</li>
-                </ul>
-            </div>
-
-            <!-- Section 5 -->
-            <div class="container">
-                <h2>🧑‍🤝‍🧑 5. Groupes & Organisations</h2>
-                <ul class="lore-list">
-                    <li>Aucun gang "classique"</li>
-                    <li>Les groupes se forment en RP</li>
-                    <li>Toute organisation peut s'effondrer</li>
-                    <li>Le staff peut intervenir si une faction nuit au serveur</li>
-                </ul>
-            </div>
-
-            <!-- Section 6 -->
-            <div class="container">
-                <h2>🎥 6. Stream & OOC</h2>
-                <ul class="lore-list">
-                    <li>Streamhack interdit</li>
-                    <li>Pas d'informations RP importantes sur Discord général</li>
-                    <li>Les litiges RP se règlent avec le staff, jamais en public</li>
-                </ul>
-            </div>
-
-            <!-- Section 7 - Sanctions -->
-            <div class="container">
-                <h2>⚖️ 7. Barème de Sanctions</h2>
-                <p style="margin-bottom: 30px;">Les sanctions sont progressives, mais peuvent être accélérées en cas de faute grave ou répétée.</p>
-
-                <h3>🟡 Infractions Mineures</h3>
-                <p style="color: var(--text-muted); margin-bottom: 15px;">(powergaming léger, erreur RP, non-respect ponctuel)</p>
-                <ol class="sanction-list">
-                    <li>Rappel oral / écrit</li>
-                    <li>Avertissement officiel</li>
-                    <li>Jail RP / retrait RP temporaire</li>
-                </ol>
-
-                <h3 style="margin-top: 30px;">🟠 Infractions Moyennes</h3>
-                <p style="color: var(--text-muted); margin-bottom: 15px;">(metagaming, troll RP, refus de jouer la peur, sabotage RP)</p>
-                <ol class="sanction-list">
-                    <li>Avertissement + sanction RP</li>
-                    <li>Jail 24 à 72h</li>
-                    <li>Wipe personnage possible</li>
-                </ol>
-
-                <h3 style="margin-top: 30px;">🔴 Infractions Graves</h3>
-                <p style="color: var(--text-muted); margin-bottom: 15px;">(troll volontaire, toxicité, insultes, cheat, récidive lourde)</p>
-                <ul class="sanction-list">
-                    <li><span class="interdit">⛔ Ban temporaire (3 à 14 jours)</span></li>
-                    <li><span class="interdit">⛔ Ban définitif sans préavis</span></li>
-                </ul>
-
-                <p style="margin-top: 20px; color: var(--couleur-principale); font-weight: bold;">📌 Le staff peut sauter des étapes si nécessaire.</p>
-            </div>
-
-            <!-- Section 8 -->
-            <div class="container">
-                <h2>🛠️ 8. Staff & Décisions</h2>
-                <ul class="lore-list">
-                    <li>Le staff est garant de l'univers</li>
-                    <li>Les décisions RP sont non négociables en public</li>
-                    <li>Tout abus de staff est traitable via ticket</li>
-                </ul>
-            </div>
-
-            <!-- Section 9 -->
-            <div class="container">
-                <h2>🕯️ 9. Philosophie de Re-World RP</h2>
-                <p><strong>Re-World RP n'est pas un serveur "facile".</strong></p>
-                <p><strong>C'est un monde :</strong></p>
-                <ul class="lore-list">
-                    <li>lent</li>
-                    <li>dangereux</li>
-                    <li>humain</li>
-                    <li>cohérent</li>
-                </ul>
-
-                <h3 style="margin-top: 25px;">👉 Si tu cherches :</h3>
-                <ul class="sanction-list" style="margin-bottom: 0;">
-                    <li><span class="interdit">du gunfight permanent ❌</span></li>
-                    <li><span class="interdit">du troll ❌</span></li>
-                    <li><span class="interdit">de l'arcade ❌</span></li>
-                </ul>
-
-                <div class="warning-box" style="margin-top: 20px;">
-                    <p><strong>Ce serveur n'est pas fait pour toi.</strong></p>
-                </div>
-            </div>
-
-            <!-- Acceptation -->
-            <div class="container">
-                <h2>✅ Acceptation du Règlement</h2>
-                <p><strong>En rejoignant Re-World RP, tu acceptes :</strong></p>
-                <ul class="lore-list">
-                    <li>l'intégralité de ce règlement</li>
-                    <li>les décisions du staff</li>
-                    <li>l'évolution du lore et des règles</li>
-                </ul>
-            </div>
-
-            <!-- Mot de fin -->
-            <div class="container" style="text-align: center; border: 3px solid var(--couleur-principale);">
-                <h2 style="border: none; padding: 0; margin-top: 0;">🔔 Mot de la Fin</h2>
-                <p style="font-size: 1.1rem; margin-top: 20px;"><strong>Le monde écoute.</strong></p>
-                <p style="font-size: 1.1rem;"><strong>Chaque action laisse une trace.</strong></p>
-                <p style="font-size: 1.1rem; color: var(--couleur-principale); font-weight: bold;">À toi de choisir comment survivre.</p>
             </div>
         </section>
 
-        <!-- ===== INFOS SERVEUR ===== -->
+        <!-- INFOS SERVEUR -->
         <section id="infos" class="section">
             <div class="container">
                 <h2>Infos de Connexion</h2>
@@ -1174,18 +804,11 @@
                     <li>Donnez des instructions d'installation</li>
                 </ul>
 
-                <h3>Comment Rejoindre</h3>
-                <ol>
-                    <li>Étape 1</li>
-                    <li>Étape 2</li>
-                    <li>Étape 3</li>
-                </ol>
-
                 <a href="https://discord.gg/VOTRE_LIEN" class="btn">Rejoindre le Discord</a>
             </div>
         </section>
 
-        <!-- ===== ÉQUIPE STAFF ===== -->
+        <!-- ÉQUIPE STAFF -->
         <section id="staff" class="section">
             <div class="container">
                 <h2>Équipe Staff</h2>
@@ -1196,24 +819,24 @@
                 <div class="card">
                     <h3>👑 Fondateur</h3>
                     <p><strong>Pseudo:</strong> [ F ] | Chuck L'ancien</p>
-                    <p><strong>Rôle:</strong> Fondateur de se monde en chaos</p>
+                    <p><strong>Rôle:</strong> Fondateur de ce monde en chaos</p>
                 </div>
 
                 <div class="card">
                     <h3>👑 Co-Fondateur</h3>
                     <p><strong>Pseudo:</strong> Krys Ketterley</p>
-                    <p><strong>Rôle:</strong> Co-Fondateur de se monde en chaos</p>
+                    <p><strong>Rôle:</strong> Co-Fondateur de ce monde en chaos</p>
                 </div>
 
                 <div class="card">
-                    <h3>🛡️ Résponsable 1</h3>
+                    <h3>🛡️ Responsable</h3>
                     <p><strong>Pseudo:</strong> Eva Caffrey</p>
-                    <p><strong>Rôle:</strong> Résponsable Staff (et autre)</p>
+                    <p><strong>Rôle:</strong> Responsable Staff</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== ACTUALITÉ ===== -->
+        <!-- ACTUALITÉ -->
         <section id="actualite" class="section">
             <div class="container">
                 <h2>Actualités</h2>
@@ -1223,12 +846,11 @@
             <div class="container" style="border-left: 5px solid var(--couleur-principale);">
                 <h3>📢 Actualité 1</h3>
                 <p><strong>Date:</strong> ???</p>
-                <p>MODIFS.....</p>
+                <p>Modifiez ce texte avec votre première actualité...</p>
             </div>
-            
         </section>
 
-        <!-- ===== GALERIE ===== -->
+        <!-- GALERIE -->
         <section id="galerie" class="section">
             <div class="container">
                 <h2>Galerie</h2>
@@ -1237,64 +859,58 @@
 
             <div class="gallery">
                 <div class="gallery-item">
-                    <div class="gallery-placeholder"><a href="https://ibb.co/W4NGZx9n"><img src="https://i.ibb.co/B5HcbzDL/Chat-GPT-Image-20-oct-2025-14-27-53.png" alt="Chat-GPT-Image-20-oct-2025-14-27-53" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/fr/clavier-mathematique'>caractères mathématiques word</a><br /></div>
+                    <img src="https://i.ibb.co/B5HcbzDL/Chat-GPT-Image-20-oct-2025-14-27-53.png" alt="Image 1">
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder"><a href="https://ibb.co/tpTSztdF"><img src="https://i.ibb.co/nMNTBvWt/Capture-d-cran-2026-03-30-202313.png" alt="Capture-d-cran-2026-03-30-202313" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/fr/clavier-mathematique'>caractères mathématiques word</a><br /></div>
+                    <img src="https://i.ibb.co/nMNTBvWt/Capture-d-cran-2026-03-30-202313.png" alt="Image 2">
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder"><a href="https://ibb.co/Mkf1N84n"><img src="https://i.ibb.co/d4tpKbqB/Capture-d-cran-2026-03-30-202342.png" alt="Capture-d-cran-2026-03-30-202342" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/fr/clavier-mathematique'>caractères mathématiques word</a><br /></div>
+                    <img src="https://i.ibb.co/d4tpKbqB/Capture-d-cran-2026-03-30-202342.png" alt="Image 3">
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">Image 4 - Remplacez le chemin</div>
+                    <div class="gallery-placeholder">Image 4</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">Image 5 - Remplacez le chemin</div>
+                    <div class="gallery-placeholder">Image 5</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">Image 6 - Remplacez le chemin</div>
+                    <div class="gallery-placeholder">Image 6</div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ============= FOOTER ============= -->
+    <!-- FOOTER -->
     <footer>
         <p><strong>Re-World RP</strong> © 2026 - Un univers post-apocalyptique</p>
         <p>Modifiez le footer avec vos informations</p>
-        <p><a href="https://discord.gg/RH8AJHpNS</a></p>
+        <p><a href="https://discord.gg/RH8AJHpNS">Rejoindre le Discord</a></p>
     </footer>
 
-    <!-- ============= JAVASCRIPT ============= -->
     <script>
         function showSection(sectionId) {
-            // Masquer toutes les sections
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Retirer la classe active de tous les boutons
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Afficher la section sélectionnée
             const selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.classList.add('active');
             }
 
-            // Ajouter la classe active au bouton cliqué
             const buttonId = 'btn-' + sectionId;
             const activeButton = document.getElementById(buttonId);
             if (activeButton) {
                 activeButton.classList.add('active');
             }
 
-            // Scroll vers le top
             window.scrollTo(0, 0);
         }
     </script>
